@@ -1,0 +1,40 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>body { background: #0d1117; color: #c9d1d9; font-family: 'Segoe UI', sans-serif; text-align: center; padding: 50px; }
+        .upload-container { border: 2px dashed #238636; border-radius: 15px; padding: 40px; width: 50%; margin: auto; background: #161b22; }
+        .btn { background: #238636; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 20px; }
+        input[type="file"] { margin: 10px; }
+        .status { margin-top: 20px; color: #8b949e; }</style></head><body><!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>PS2 Cloud Converter - Sobral Tech</title>
+    
+</head>
+<body>
+    <div class="upload-container">
+        <h1>🎮 PS2 ELF Converter</h1>
+        <p>Selecione o arquivo <b>.c</b> e o <b>Makefile</b></p>
+        
+        <input type="file" id="fileInput" multiple>
+        <br>
+        <button class="btn" onclick="uploadFiles()">CONVERTER AGORA</button>
+        
+        <div id="status" class="status">Aguardando arquivos...</div>
+    </div>
+
+    
+</body>
+</html><script>async function uploadFiles() {
+            const files = document.getElementById('fileInput').files;
+            const status = document.getElementById('status');
+            
+            if (files.length === 0) {
+                alert("Por favor, selecione os arquivos primeiro!");
+                return;
+            }
+
+            status.innerText = "Enviando para o GitHub Actions...";
+            
+            // Aqui você usaria a API do GitHub para dar o "Push" automático
+            // Luan, para isso funcionar no Vercel, você precisará configurar um Token do GitHub.
+            console.log("Arquivos prontos para envio:", files);
+        }</script></body></html>
